@@ -1,0 +1,46 @@
+header {
+  background: green;
+  color: #fff;
+  border: 25px solid yellow;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  padding-left: 80px;
+
+}
+main {
+  font-family: "Times New Roman";
+  font-size: 125%;
+
+}
+footer{
+  padding-top: 150px;
+  padding-right: 30px;
+  padding-left: 80px;
+  background: green;
+  font-size: 125%;
+}
+
+.navig {
+
+  padding-right: 30px;
+  padding-left: 80px;
+
+}
+
+.horizon {
+  display: inline;
+  padding-right: 20px;
+  padding-left: 10%;
+  margin-left: 15%;
+  list-style-type: none;
+}
+*{
+  border-color: red;
+}
+head {
+  margin: 10px auto 10px auto
+}
+div {
+margin: 0 20% 0 20%;
+}
