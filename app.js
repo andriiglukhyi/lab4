@@ -123,13 +123,11 @@ function qSeven() {
         flag = true;
         countAnsw++;
         break;
-      } else alert('Incorrect');
+      }
     }
 
-    if (count === 6) {
-      alert('next time');
-      break;
-    }
+    if (!flag) alert('Incorrect');
+    if (flag) break;
   }
 }
 
