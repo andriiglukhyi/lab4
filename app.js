@@ -6,75 +6,42 @@ console.log('user name',useName);
 var countAnsw = 0;
 
 function firstFive() {
-  // question 1
-  var question1 = prompt('Hello ' + useName + ' I are have a couple question for you! You should answer Yes or No. Ok? ');
-  console.log('1st question', question1);
 
-  if (question1.toLowerCase() === 'yes' || question1.toLowerCase() === 'y' ) {
-    alert('Thank You');
-    countAnsw++;
-  }
+  var arrQs = [ 'Hello ' + useName + ' I are have a couple question for you! You should answer Yes or No. Ok? ',
+                'Do you think I am bilingual?',
+                'Do I live in apartment?',
+                'Do you thing I have a job expirience',
+                'Do you think I want to be a developer?' ];
+  var arrAs = [true,true,true,false,true];
+  var arrTrue = ['y','yes','yep'];
+  var arrFalse = ['n','no'];
 
-  if (question1.toLowerCase() === 'no' || question1.toLowerCase() === 'n' || question1.toLowerCase === 'none') {
-    alert ('I have to ask you any way');
-  }
+  for (var i = 0; i < arrQs.length; ++i) {
+    //take input
+    var answer = prompt(arrQs[i]);
+    answer = answer.toLowerCase();
 
+    //validate input
+    var longerArrLn = arrFalse.length;
+    if (arrTrue.length > arrFalse.length) longerArrLn = arrTrue.length;
 
-
-  //question 2
-
-  var language = prompt('Do you think I am bilingual?');
-  console.log('bilingual', language);
-
-  if (language.toLowerCase() === 'yes' || language.toLowerCase() === 'y' ) {
-    alert('You are tight. I do speak a couple languages');
-    countAnsw++;
-  }
-
-  if (language.toLowerCase() === 'no' || language.toLowerCase() === 'n') {
-    alert('No. I am speak a couple languages');
-  }
-
-
-  //question 3
-
-  var apart = prompt('Do I live in apartment?');
-  console.log('apartment: ', apart);
-
-  if (apart.toUpperCase() === 'YES' || apart.toUpperCase() === 'Y') {
-    alert('Yes. You are right about that');
-    countAnsw++;
-  }
-  if (apart.toUpperCase() === 'NO' || apart.toUpperCase() === 'N') {
-    alert ('Wrong answer');
-  }
-
-
-  //question 3
-
-  var expir = prompt('Do you thing I have a job expirience');
-  console.log('expirience', expir);
-
-  if (expir.toLowerCase() === 'yes' || expir.toLowerCase() === 'y') {
-    alert('No. I don\'t have any expirience in IT');
-    countAnsw++;
-  }
-
-  if (expir.toLowerCase() === 'no' || expir.toLowerCase() === 'n') {
-    alert('Coret answer');
-  }
-
-  //question 4
-
-  var goal = prompt('Do you think I want to be a developer?');
-  console.log('goal',goal);
-
-  if (goal.toLowerCase() === 'yes' || goal.toLowerCase() === 'y') {
-    alert('You are correct. I want to bo a developer');
-    countAnsw++;
-  }
-  if (goal.toLowerCase() === 'no' || goal.toLowerCase() === 'n') {
-    alert('Wrong answer');
+    var validAns = false;
+    for (var j = 0; j < longerArrLn; ++j) {
+      if (answer === arrTrue[j]) {
+        validAns = true;
+        answer = true;
+        break;
+      } else if (answer === arrFalse[j]) {
+        validAns = true;
+        answer = false;
+        break;
+      }
+    }
+    if (!validAns) {
+      alert('Invalid input. Please enter \'yes\' or \'no\'');
+      --i;
+    } else if ((arrAs[i] && answer) || (!arrAs[i] && !answer)) alert('Correct!');
+    else alert('Bzzt! Wrong!');
   }
 }
 
